@@ -1,4 +1,5 @@
-# Build a Full-stack App from Scratch
+# "Build a Full-stack App from Scratch"
+(Based on the Frontend Masters Course of the same name; the following is my understanding of the process, which tries to paraphrase what was demonstrated in the course)
 
 ## SET UP
 First, we set up our configuration; package.json should look like this:
