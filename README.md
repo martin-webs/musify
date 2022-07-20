@@ -255,14 +255,14 @@ We'll wrap our app with ChakraProvider:
 ```
 Next we create a component named `PlayerLayout` (we create a `components` folder in the root of our project and place `PlayerLayout` there. We call the file `playerLayout.tsx` (or better `PlayerLayout.tsx?`). BTW, tsx means `typescript jsx`). 
 
-`PlayerLayout` will return a <Box>, which is a <div> in the Chackra UI world, containing `{children}`, which is whatever we place inside the `PlayerLayout` component in `_app.tsx` (in this case the homepage we currently have, just as an example).
+`PlayerLayout` will return a `<Box>`, which is a `<div>` in the Chackra UI world, containing `{children}`, which is whatever we place inside the `PlayerLayout` component in `_app.tsx` (in this case the homepage we currently have, just as an example).
 
 Technically, we could have wrap `PlayerLayout` around each component instead, but we would not notice it. But in this case, we prefer not to; our app will have a player in the layout, that player would reload for any change happening in other components and we do not want that. You can wrap `PlayerLayout` in other components if its content is static though.
 
 However this creates a problem: a sign up/in page would have to live inside this global layout, too and we don't want that either. We'll get around this problem now.
 
 ## Styling PlayLayout
-<Box> is useful since we can pass CSS properties as props, right out of the box(they literally mapped every CSS property to be passed as a prop in the <Box> component). This saves us the need to use CSS preprocessors, CSS lives within the component.
+`<Box>` is useful since we can pass CSS properties as props, right out of the box(they literally mapped every CSS property to be passed as a prop in the `<Box>` component). This saves us the need to use CSS preprocessors, CSS lives within the component.
 
 The recommendation is, use fixed sizes for the navigation bar, "navigation is one of those things that should never change its dimensions, no matter what screen size is." So we are using absolute values:
 
@@ -329,10 +329,10 @@ const Sidebar = () => {
 };
 export default Sidebar;
 ```
-Now that the layout is set, we add a <Box> container to manage the padding in the Y axis, inside we start adding the content: we make a <Box> to manage <NextImage>, imported from 'next/image', which makes you images web-ready.
-The next <Box> will have bottom-margin="20px" to account for the space between the two submenus under the logo.
+Now that the layout is set, we add a <`Box`> container to manage the padding in the Y axis, inside we start adding the content: we make a <`Box`> to manage `<NextImage>`, imported from 'next/image', which makes you images web-ready.
+The next <`Box`> will have bottom-margin="20px" to account for the space between the two submenus under the logo.
 
-We use <NextLink> within <LinkBox> to prevent the app from making requests to the server when the user clicks on a link, instead, the request will be made in the client-side. Within <NextLink> we add the `passHref` property, so the href is passed to its child component, in this case <LinkOverlay>.
+We use `<NextLink>` within `<LinkBox>` to prevent the app from making requests to the server when the user clicks on a link, instead, the request will be made in the client-side. Within `<NextLink>` we add the `passHref` property, so the href is passed to its child component, in this case `<LinkOverlay>`.
 
 ```bash
      <Box paddingY="20px">
